@@ -1,75 +1,46 @@
-# Trustworthy Machine Learning: Bias & Reliability Analysis
+# Trustworthy ML: Bias & Reliability Analysis
 
-## 📌 Overview
-This project explores the reliability and fairness of machine learning models by analyzing performance across demographic groups. Using the Adult Income dataset, a classification model is built to predict income levels and evaluate potential bias.
+## Overview
+This project explores how reliable a machine learning model is when making predictions across different groups. I used the Adult Income dataset and trained a classification model to predict whether a person earns more than 50K per year.
 
----
-
-## 🎯 Objectives
-- Build a machine learning classification model
-- Evaluate model performance using standard metrics
-- Analyze bias and reliability across gender groups
-- Demonstrate limitations of accuracy as a fairness metric
+The main goal was not just to build a model, but to check whether its predictions are fair and consistent across genders.
 
 ---
 
-## 📊 Dataset
-- Adult Income Dataset (UCI)
-- Contains demographic and income-related attributes
-- Target variable: income (<=50K, >50K)
+## What I Did
+- Cleaned and preprocessed the dataset  
+- Encoded categorical variables  
+- Trained a Logistic Regression model  
+- Evaluated performance using accuracy and confusion matrix  
+- Compared results for male and female groups  
 
 ---
 
-## ⚙️ Methodology
-1. Data Cleaning and Preprocessing  
-   - Handled missing values  
-   - Converted data types  
-   - Encoded categorical features  
+## Results
+- Overall accuracy was around 80–85%  
+- Male accuracy: ~0.78  
+- Female accuracy: ~0.90  
 
-2. Model Training  
-   - Logistic Regression  
-   - Feature scaling using StandardScaler  
-
-3. Evaluation  
-   - Accuracy  
-   - Confusion Matrix  
-   - Precision, Recall, F1-score  
-
-4. Bias Analysis  
-   - Performance comparison across gender groups  
-   - Subgroup evaluation using classification metrics  
+At first, it looks like the model performs better for females. But after looking deeper, the results show something interesting.
 
 ---
 
-## 📈 Results
+## Key Observation
+The recall for the positive class (income >50K) is much lower for females (~0.23) compared to males (~0.48).
 
-### Overall Performance
-- Accuracy: ~80–85%
-
-### Gender-wise Performance
-- Male Accuracy: ~0.78  
-- Female Accuracy: ~0.90  
-
-### Key Insight
-- Despite higher overall accuracy for females, the model shows **significantly lower recall for the positive class (income >50K) in females (~0.23)** compared to males (~0.48).
-- This indicates that the model fails to correctly identify a large proportion of positive cases for females.
+This means the model is missing a large number of actual high-income females. So even though overall accuracy is higher, the model is not equally reliable for both groups.
 
 ---
 
-## ⚠️ Key Findings
-- Accuracy alone is **not sufficient** to evaluate fairness  
-- Model performance varies significantly across groups  
-- Error distribution (false negatives) reveals deeper bias  
-- Subgroup analysis is essential for trustworthy AI systems  
+## What I Learned
+- Accuracy alone can be misleading  
+- Different groups can have very different error patterns  
+- It’s important to look at metrics like recall and confusion matrix  
+- Evaluating fairness is an important part of building ML systems  
 
 ---
 
-## 🧠 Conclusion
-This project highlights the importance of evaluating machine learning models beyond overall accuracy. By analyzing subgroup performance, it becomes evident that models can behave differently across populations, raising concerns about fairness and reliability.
-
----
-
-## 🛠️ Tech Stack
+## Tools Used
 - Python  
 - Pandas, NumPy  
 - Scikit-learn  
@@ -77,12 +48,10 @@ This project highlights the importance of evaluating machine learning models bey
 
 ---
 
-## 🚀 Future Work
-- Apply fairness-aware algorithms  
-- Explore bias mitigation techniques  
-- Extend analysis to other demographic attributes  
+## Conclusion
+This project helped me understand that building a model is not enough. It’s equally important to analyze how it behaves for different groups and whether it can be trusted in real-world scenarios.
 
 ---
 
-## 📎 Author
+## Author
 Krishal Sukdeve
